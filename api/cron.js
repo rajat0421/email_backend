@@ -26,9 +26,9 @@ async function sendEmail() {
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully!');
+    console.log('Email sent successfully');
   } catch (error) {
-    console.log('Error sending email:', error);
+    console.error('Error sending email:', error);
   }
 }
 
@@ -48,13 +48,13 @@ function calculateTimeTogether() {
   return `${years} years and ${months} months`;
 }
 
-// This will be the handler for the cron job
-export default async function handler(req, res) {
+// Export the handler for the API
+module.exports = async (req, res) => {
   try {
-    console.log('Sending email...');
+    // Trigger the email function
     await sendEmail();
     res.status(200).send('Email sent successfully');
   } catch (error) {
     res.status(500).send('Error sending email: ' + error.message);
   }
-}
+};
