@@ -1,21 +1,35 @@
 // backend/api/cron.js
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+import nodemailer from 'nodemailer';
+
+export default async function handler(req, res) {
+  // Check if the request is authorized using the CRON_SECRET
+  if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
+    return res.status(401).end('Unauthorized');
+  }
+
+  try {
+    // Send the email
+    await sendEmail();
+    res.status(200).send('Email sent successfully');
+  } catch (error) {
+    res.status(500).send('Error sending email: ' + error.message);
+  }
+}
 
 // Email transporter configuration
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email provider
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your email address
-    pass: process.env.EMAIL_PASS, // Your email password or app password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 // Function to send the email
 async function sendEmail() {
   const mailOptions = {
-    from: process.env.EMAIL_USER, // Your email address
-    to: ['rajattalekar5143@gmail.com', 'rajattalekar80@gmail.com'], // Add your email and hers here
+    from: process.env.EMAIL_USER,
+    to: ['rajattalekar5143@gmail.com', 'rajattalekar80@gmail.com'],
     subject: 'Congratulations on Completing Another Month!',
     html: `
       <h1>Congratulations!</h1>
@@ -34,7 +48,7 @@ async function sendEmail() {
 
 // Function to calculate the time together
 function calculateTimeTogether() {
-  const startDate = new Date('2023-03-22'); // Your start date
+  const startDate = new Date('2023-03-22');
   const now = new Date();
 
   const totalMonths =
@@ -47,14 +61,3 @@ function calculateTimeTogether() {
 
   return `${years} years and ${months} months`;
 }
-
-// Export the handler for the API
-module.exports = async (req, res) => {
-  try {
-    // Trigger the email function
-    await sendEmail();
-    res.status(200).send('Email sent successfully');
-  } catch (error) {
-    res.status(500).send('Error sending email: ' + error.message);
-  }
-};
