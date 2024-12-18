@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/api/cron.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "cron": [
+      {
+        "path": "/api/cron",
+        "schedule": "0 0 22 * *"
+      }
+    ]
+  }
+  
