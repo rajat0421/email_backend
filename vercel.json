@@ -11,11 +11,6 @@
       "path": "/api/cron",
       "schedule": "0 0 22 * *"  // This runs at midnight on the 22nd of every month
     }
-  ],
-  "env": {
-    "EMAIL_USER": "nnouse284@gmail.com",
-    "EMAIL_PASS": "ueidtvweiqjplmgd",
-    "CRON_SECRET": "aB3!xZ9#1tR0vPq8"
-  }
+  ]
 }
 
