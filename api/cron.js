@@ -1,27 +1,22 @@
-// backend/api/cron.js
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  // Check if the request is authorized using the CRON_SECRET
-  if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
-    return res.status(401).end('Unauthorized');
-  }
-
   try {
     // Send the email
     await sendEmail();
-    res.status(200).send('Email sent successfully');
+    res.status(200).send("Email sent successfully");
   } catch (error) {
-    res.status(500).send('Error sending email: ' + error.message);
+    console.error("Error sending email:", error);
+    res.status(500).send("Error sending email: " + error.message);
   }
 }
 
 // Email transporter configuration
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_USER, // Your Gmail address
+    pass: process.env.EMAIL_PASS, // Your Gmail password or app-specific password
   },
 });
 
@@ -29,8 +24,8 @@ const transporter = nodemailer.createTransport({
 async function sendEmail() {
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: ['rajattalekar5143@gmail.com', 'rajattalekar80@gmail.com'],
-    subject: 'Congratulations on Completing Another Month!',
+    to: ["rajattalekar5143@gmail.com", "rajattalekar80@gmail.com"],
+    subject: "Congratulations on Completing Another Month!",
     html: `
       <h1>Congratulations!</h1>
       <p>You’ve completed another month together. Here's to many more!</p>
@@ -38,17 +33,13 @@ async function sendEmail() {
     `,
   };
 
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
-  } catch (error) {
-    console.error('Error sending email:', error);
-  }
+  await transporter.sendMail(mailOptions);
+  console.log("Email sent successfully");
 }
 
 // Function to calculate the time together
 function calculateTimeTogether() {
-  const startDate = new Date('2023-03-22');
+  const startDate = new Date("2023-03-22");
   const now = new Date();
 
   const totalMonths =

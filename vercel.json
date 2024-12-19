@@ -2,20 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/api/cron.js",
+      "src": "api/cron.js",
       "use": "@vercel/node"
     }
   ],
-  "crons": [
+  "routes": [
     {
-      "path": "/api/cron",
-      "schedule": "0 0 22 * *"  // This runs at midnight on the 22nd of every month
+      "src": "/api/cron",
+      "dest": "api/cron.js"
     }
   ],
-  "env": {
-    "EMAIL_USER": "nnouse284@gmail.com",
-    "EMAIL_PASS": "ueidtvweiqjplmgd",
-    "CRON_SECRET": "aB3!xZ9#1tR0vPq8"
-  }
+  "cron": [
+    {
+      "path": "/api/cron",
+      "schedule": "22 0 22 * *"
+    }
+  ]
 }
-
