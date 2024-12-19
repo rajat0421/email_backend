@@ -11,14 +11,11 @@
       "src": "/api/cron",
       "dest": "api/cron.js"
     }
-<<<<<<< HEAD
   ],
   "cron": [
     {
       "path": "/api/cron",
-      "schedule": "22 0 22 * *"
+      "schedule": "22 0 22 * *" 
     }
-=======
->>>>>>> bced4814e4a1c138fbb49956e0f4b1f77cfb0e18
   ]
 }
