@@ -26,14 +26,24 @@ async function sendEmail() {
   console.log("EMAIL_USER:", process.env.EMAIL_USER);
   console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
   
-  const mailOptions = {
+  const mailOptions = const mailOptions = {
     from: process.env.EMAIL_USER,
     to: ["rajattalekar5143@gmail.com", "rajattalekar80@gmail.com"],
-    subject: "Congratulations on Completing Another Month!",
+    subject: "🌟 Hey Chuza! Another Month of Awesomeness Together! 🌟",
     html: `
-      <h1>Congratulations!</h1>
-      <p>You’ve completed another month together. Here's to many more!</p>
-      <p>Total Time Together: <strong>${calculateTimeTogether()}</strong></p>
+      <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #fffbe6; color: #333;">
+        <h1 style="color: #ff9900;">🐥 Hey Chuza! 🐥</h1>
+        <p style="font-size: 18px;">We've completed another amazing month together! You're the cutest chick in my life, and I couldn't be happier to celebrate this with you. 💛</p>
+        <div style="margin: 20px 0;">
+          <img src="https://i.imgur.com/5k5U3hP.png" alt="Cute Chick" style="width: 150px; height: auto; border-radius: 50%; border: 3px solid #ff9900;" />
+        </div>
+        <p style="font-size: 16px; font-weight: bold;">Time Together: <strong>${calculateTimeTogether()}</strong></p>
+        <p style="font-size: 18px;">Here's to many more months of laughter, love, and happiness. You're the best, my little Chuza! 🐣</p>
+        <p style="font-size: 16px;">Love, <br><strong>Your Rajat</strong> ❤️</p>
+        <div style="margin-top: 20px; font-size: 14px; color: #777;">
+          <p>PS: You're the most adorable chick in the world, and I can't wait for all the amazing adventures ahead!</p>
+        </div>
+      </div>
     `,
   };
 
