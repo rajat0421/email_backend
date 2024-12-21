@@ -29,19 +29,19 @@ async function sendEmail() {
    const mailOptions = {
     from: process.env.EMAIL_USER,
     to: ["rajattalekar5143@gmail.com", "rajattalekar80@gmail.com"],
-    subject: "🌟 Hey Chuza! Another Month of Awesomeness Together! 🌟",
+    subject: "Lesgooo...!!",
     html: `
       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #fffbe6; color: #333;">
-        <h1 style="color: #ff9900;">🐥 Hey Chuza! 🐥</h1>
-        <p style="font-size: 18px;">We've completed another amazing month together! You're the cutest chick in my life, and I couldn't be happier to celebrate this with you. 💛</p>
+        <h1 style="color: #ff9900;">🐥 Gummoning Chuze! 🐥</h1>
+        <p style="font-size: 18px;">Completed another amazing(not really) month together!💛</p>
         <div style="margin: 20px 0;">
           <img src="https://i.imgur.com/5k5U3hP.png" alt="Cute Chick" style="width: 150px; height: auto; border-radius: 50%; border: 3px solid #ff9900;" />
         </div>
-        <p style="font-size: 16px; font-weight: bold;">Time Together: <strong>${calculateTimeTogether()}</strong></p>
-        <p style="font-size: 18px;">Here's to many more months of laughter, love, and happiness. You're the best, my little Chuza! 🐣</p>
-        <p style="font-size: 16px;">Love, <br><strong>Your Rajat</strong> ❤️</p>
+        <p style="font-size: 16px; font-weight: bold;">Jhela hua samay: <strong>${calculateTimeTogether()}</strong></p>
+        <p style="font-size: 18px;">You're the chotu sa tingu sa, my little Chuza! 🐣</p>
+        <p style="font-size: 16px;">Love, <br><strong>Your Aalu</strong> ❤️</p>
         <div style="margin-top: 20px; font-size: 14px; color: #777;">
-          <p>PS: You're the most adorable chick in the world, and I can't wait for all the amazing adventures ahead!</p>
+          <p>PS: Umm i want to be with u jaise pehle the...</p>
         </div>
       </div>
     `,
