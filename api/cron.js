@@ -26,7 +26,7 @@ async function sendEmail() {
   console.log("EMAIL_USER:", process.env.EMAIL_USER);
   console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
   
-  const mailOptions = const mailOptions = {
+   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: ["rajattalekar5143@gmail.com", "rajattalekar80@gmail.com"],
     subject: "🌟 Hey Chuza! Another Month of Awesomeness Together! 🌟",
