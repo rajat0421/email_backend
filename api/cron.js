@@ -38,7 +38,7 @@ async function sendEmail() {
           <img src="https://i.imgur.com/5k5U3hP.png" alt="Cute Chick" style="width: 150px; height: auto; border-radius: 50%; border: 3px solid #ff9900;" />
         </div>
         <p style="font-size: 16px; font-weight: bold;">Jhela hua samay: <strong>${calculateTimeTogether()}</strong></p>
-        <p style="font-size: 18px;">You're the chotu sa tingu sa, my little Chuza! 🐣</p>
+        <p style="font-size: 18px;">Hamesha u'll be my chotu sa tingu sa,little Chuza! 🐣</p>
         <p style="font-size: 16px;">Love, <br><strong>Your Aalu</strong> ❤️</p>
         <div style="margin-top: 20px; font-size: 14px; color: #777;">
           <p>PS: Umm i want to be with u jaise pehle the...</p>
