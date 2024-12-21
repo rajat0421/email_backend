@@ -41,7 +41,7 @@ async function sendEmail() {
         <p style="font-size: 18px;">Hamesha u'll be my chotu sa tingu sa,little Chuza! 🐣</p>
         <p style="font-size: 16px;">Love, <br><strong>Your Aalu</strong> ❤️</p>
         <div style="margin-top: 20px; font-size: 14px; color: #777;">
-          <p>PS: Umm i want to be with u jaise pehle the...</p>
+          <p>PS: Umm i want to be with u jaise hum pehle hua karte the...</p>
         </div>
       </div>
     `,
