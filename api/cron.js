@@ -28,7 +28,8 @@ async function sendEmail() {
   
    const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: ["rajattalekar5143@gmail.com", "guptanavya266@gmail.com"],
+    // to: ["rajattalekar5143@gmail.com", "guptanavya266@gmail.com"],
+    to: ["rajattalekar5143@gmail.com", "rajattalekar80@gmail..com"],
     subject: "Lesgooo...!!",
     html: `
       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #fffbe6; color: #333;">
